@@ -152,7 +152,32 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 ![Fig 7](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig7.jpg?raw=true)
 
 ----
-# T3 - Conclusão
+
+#T3 - Materiais de Ajuda
+
+**Oracle ERP Cloud - APIs que permitem especificar filtros e colunas**
+
+https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-get.html
+
+**Publish/Subscriber (Queue/Filas)**
+
+https://www.techsupper.com/2017/07/integration-to-publish-messages-to.html
+https://www.techsupper.com/2017/07/integration-to-subscribe-to-oracle_72.html
+https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part1
+https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part2
+
+**Agendamentos no OIC**
+
+https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/creating-scheduled-integrations.html#GUID-9632A5C8-98A7-4371-B542-6A8583427C8D
+
+**Database Query no OIC**
+
+https://docs.oracle.com/en/cloud/paas/integration-cloud/database-adapter/using-oracle-database-adapter-oracle-integration.pdf
+https://www.techsupper.com/2017/11/bind-query-parameter-in-database.html
+
+
+----
+# T4 - Conclusão
 
 Escrever uma aplicação pode ser bastante complexo, muitas vezes o fazemos com um cenário em mente porém este muda drasticamente trazendo um outro mais complexo, com mais dados a serem processados, trazendo muitas vezes problemas de tempo de resposta ou até o colapso geral da aplicação.
 
