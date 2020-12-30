@@ -59,5 +59,6 @@ Outra forma de evitar os **Loops** é considerar fazer as queries de consulta em
 Quando consideramos utilizar **APIs** do **ERP SaaS**, lembre-se que existem várias formas de tratar consultas e processamentos em **Lote** o que é uma **boa prática**.
 
     Aplicações SaaS consideram utilizar processamento em Lotes como boa prática
-    Isto porque a Cloud traz uma série de benefícios, mas se comparado com o mundo on-premisses, temos que levar em consideração uma latência maior com a que estávamos acostumados quando implementamos em um ambiente on-premisses.
+    Isto porque a Cloud traz uma série de benefícios, mas se comparado com o mundo on-premisses, 
+    temos que levar em consideração uma latência maior com a que estávamos acostumados quando implementamos em um ambiente on-premisses.
     
