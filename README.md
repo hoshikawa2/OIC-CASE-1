@@ -55,10 +55,16 @@ Leve em consideração os seguintes pontos para avaliar quando usar ou não **Lo
     Você pode considerar usar Loops dentro do OIC quando estiver pensando em execuções em BATCH (temporizadas)
     
 
-Outra forma de evitar os **Loops** é considerar fazer as queries de consulta em Lote. 
+Na figura anterior, podemos notar (conforme as observações feitas) que existe um **Loop** e dentro dele há inúmeras chamadas a **API** do **ERP SaaS**, causando uma demora entre uma consulta e outra. Uma outra forma de tratar isto, sabendo que não será possível evitar o Loop, é primeiro realizar esta chamada a API de forma que não seja necessário executar inúmeras vezes e sim chamá-la uma única vez, em lote.
+
 Quando consideramos utilizar **APIs** do **ERP SaaS**, lembre-se que existem várias formas de tratar consultas e processamentos em **Lote** o que é uma **boa prática**.
 
     Aplicações SaaS consideram utilizar processamento em Lotes como boa prática
     Isto porque a Cloud traz uma série de benefícios, mas se comparado com o mundo on-premisses, 
-    temos que levar em consideração uma latência maior com a que estávamos acostumados quando implementamos em um ambiente on-premisses.
+    temos que levar em consideração uma latência maior com a que estávamos acostumados 
+    quando implementamos em um ambiente on-premisses.
     
+Logo, uma boa forma de fazer isto antes de continuar o processamento é tentar encontrar uma maneira de executar em lote como abaixo:
+
+![Fig 2](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig2.jpg?raw=true)
+
