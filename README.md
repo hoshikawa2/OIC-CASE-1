@@ -103,3 +103,7 @@ Com base nisto, poderíamos propor processamentos agendados para preparação de
     necessitam ser apagados ou atualizados)
     
 ![Fig 3](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig3.jpg?raw=true)
+
+![Fig 4](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig4.jpg?raw=true)
+
+![Fig 5](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig5.jpg?raw=true)
