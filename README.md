@@ -159,6 +159,9 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-get.html
 
+![Fig 9](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig9.jpg?raw=true)
+
+
 **Publish/Subscriber (Queue/Filas)**
 
 https://www.techsupper.com/2017/07/integration-to-publish-messages-to.html
