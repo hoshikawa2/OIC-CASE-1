@@ -5,7 +5,10 @@ O Objetivo deste documento é demonstrar um caso de uso típico de implementaç�
 -----
 # T1 - Cenário Atual (As-Is)
 
-Na Figura abaixo, temos um processo de processamento de boletos em atraso, no qual existe um botão que dispara o processamento.
+Na Figura abaixo, temos um caso de processamento de boletos em atraso, no qual existe um botão que dispara o processamento.
+Vamos abstrair os detalhes deste processamento, imaginando que, um usuário clica no botão e espera que os boletos em atraso dos últimos 5 anos possam ser renegociados, impressos ou algum tipo de processamento adicional seja realizado neste momento. 
+Qualquer processamento adicional pode estar presente ou não neste caso de uso. O importante aqui é analisar a situação dos objetivos de forma bem abstrata. Logo, este caso de uso pode ser útil para várias outras situações.
+
 Após o clique do botão, é executada uma consulta em banco de dados (Query) no qual é realizada sobre todos os dados de boletos dos últimos 5 anos. 
 
 ![Fig 1](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig1.jpg?raw=true)
@@ -13,6 +16,8 @@ Após o clique do botão, é executada uma consulta em banco de dados (Query) no
 **T1.1 Análise da Query**
 
 Trata-se de uma consulta extremamente demorada, pois envolve as tabelas de Boletos e suas respectivas parcelas dos últimos 5 anos. Possivelmente, ainda existem complicadores como dados que não estão tratados para uso imediato do processamento em questão e que podem demandar algum tipo de tratamento durante a execução deste caso de uso.
+
+Vamos levar em consideração que esta query traz uma grande quantidade de dados causando um custo grande de processamento no banco de dados e também trazendo um grande volume de dados através da comunicação em rede.
 
 **T1.2 Análise do Loop**
 
@@ -32,7 +37,18 @@ Não iremos detalhar esta etapa porém trataremos as alternativas cabíveis adia
 ----
 # T2 - Possíveis Soluções
 
-**T2.1 Substituir Consulta Única por Lotes**
+**T2.1 Consultas a bancos de dados**
+
+Caso clássico de consulta a um banco de dados para que em seguida, possamos utilizar as linhas obtidas para processamento.
+A solução clássica em banco de dados também vale aqui. Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
+Cria um índice de banco de dados pode ajudar na performance da execução desta consulta.
+
+Além disto, talvez valha a pena a criação de uma stored procedure para que a consulta esteja compilada no banco de dados e possa ser executada de forma imediata. Isto vai ajudar bastante na performance.
+
+A procedure também pode ser considerada para casos em que se possa tratar os dados para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é possível resolver numa query só estes problemas. 
+
+
+**T2.2 Substituir Consulta Única por Lotes**
 
 Dentro do OIC (na figura abaixo, grifado em azul) são executadas inúmeras chamadas (1.000x) para a API do **ERP SaaS** ocasionando o efeito analisado em **T1.2**.
 
@@ -71,7 +87,7 @@ Logo, uma boa forma de fazer isto antes de continuar o processamento é tentar e
 
 Mesmo que não seja possível evitar o **Loop** fica mais leve depois utilizar as informações capturadas anteriormente em uma única consulta.
 
-**T2.2 Agendamento**
+**T2.3 Agendamento**
 
 Processamentos particionados e agendados também podem ser a solução no lugar de tentar processar tudo sequencialmente e de uma única vez.
 Muitas vezes, e por incrível que pareça, um processo não necessita de resposta imediata porque o objetivo do negócio não requer isto.
@@ -110,7 +126,7 @@ Com base nisto, poderíamos propor processamentos agendados para preparação de
 
 ![Fig 6](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig6.jpg?raw=true)
 
-**T2.3 Outros**
+**T2.4 Outros**
 
 Lembra-se deste item **OUTROS** mencionado anteriormente na seção **T1** de análise?
 Possivelmente, este ponto pode ter resolução no que comentamos ao longo deste documento, porém, existem casos, em que apenas isto não irá resolver o problema.
