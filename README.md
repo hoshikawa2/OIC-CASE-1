@@ -55,7 +55,8 @@ Leve em consideração os seguintes pontos para avaliar quando usar ou não **Lo
     Você pode considerar usar Loops dentro do OIC quando estiver pensando em execuções em BATCH (temporizadas)
     
 
-Na figura anterior, podemos notar (conforme as observações feitas) que existe um **Loop** e dentro dele há inúmeras chamadas a **API** do **ERP SaaS**, causando uma demora entre uma consulta e outra. Uma outra forma de tratar isto, sabendo que não será possível evitar o Loop, é primeiro realizar esta chamada a API de forma que não seja necessário executar inúmeras vezes e sim chamá-la uma única vez, em lote.
+Na figura anterior, podemos notar (conforme as observações feitas) que existe um **Loop** e dentro dele há inúmeras chamadas a **API** do **ERP SaaS**, causando uma demora entre uma requisição e outra. Uma outra forma de tratar isto, sabendo que não será possível evitar o Loop, é primeiro realizar esta chamada a API de forma que não seja necessário executar inúmeras vezes e sim chamá-la uma única vez, em lote.
+Repare que podemos considerar que a chamada a **API** do **ERP SaaS** pode ser uma consulta ou uma outra requisição do tipo UPDATE, por exemplo. Em ambos os casos, é válido tentar uma execução em **Lote**.
 
 Quando consideramos utilizar **APIs** do **ERP SaaS**, lembre-se que existem várias formas de tratar consultas e processamentos em **Lote** o que é uma **boa prática**.
 
@@ -68,3 +69,37 @@ Logo, uma boa forma de fazer isto antes de continuar o processamento é tentar e
 
 ![Fig 2](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig2.jpg?raw=true)
 
+Mesmo que não seja possível evitar o **Loop** fica mais leve depois utilizar as informações capturadas anteriormente em uma única consulta.
+
+**T2.2 Agendamento**
+
+Processamentos particionados e agendados também podem ser a solução no lugar de tentar processar tudo sequencialmente e de uma única vez.
+Muitas vezes, e por incrível que pareça, um processo não necessita de resposta imediata porque o objetivo do negócio não requer isto.
+Demandas que necessitam de processamento e resposta próximo ao **tempo-real** são aquelas transações em que o usuário ou cliente realmente precisa disto para continuar seu trabalho ou atividade. Leve isto em consideração.
+
+   Talvez seja mais fácil fazer uma preparação das informações durante a madrugada 
+   para que no início do dia, tudo possa ser processado de forma mais leve
+   
+Em nosso caso de uso, o processo original implica em um botão que dispara o processamento dos boletos em atraso. 
+Levando em consideração as análises anteriores em **T1**, uma boa abordagem seria deixar o processamento mais leve fazendo uma preparação prévia das informações durante a madrugada.
+
+O que isto quer dizer?
+
+Vimos que possivelmente, uma query para trazer todos os boletos em atraso e suas parcelas dos últimos 5 anos pode causar uma certa demora para consultar no banco de dados.
+Vimos também que possivelmente, ainda haja algum tipo de processamento adicional para executar as tarefas pretendidas no caso de uso.
+
+Com base nisto, poderíamos propor processamentos agendados para preparação de um banco de dados mais leve:
+
+
+    Considerar a criação de um banco de dados enxuto com o objetivo de otimizar
+    ao máximo o processamento para o caso de uso
+    
+    Considerar otimizar a estruturação das tabelas a fim de atender a demanda
+    
+    Considerar fazer updates incrementais para otimizar o tempo de processamento
+    agendado
+    
+    Considerar fazer o PURGE de dados e atualizações (exemplo: boletos já pagos
+    necessitam ser apagados ou atualizados)
+    
+![Fig 3](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig3.jpg?raw=true)
