@@ -153,7 +153,7 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 
 ----
 
-#T3 - Materiais de Ajuda
+# T3 - Materiais de Ajuda
 
 **Oracle ERP Cloud - APIs que permitem especificar filtros e colunas**
 
