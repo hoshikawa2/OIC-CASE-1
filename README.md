@@ -107,3 +107,36 @@ Com base nisto, poderíamos propor processamentos agendados para preparação de
 ![Fig 4](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig4.jpg?raw=true)
 
 ![Fig 5](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig5.jpg?raw=true)
+
+![Fig 6](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig6.jpg?raw=true)
+
+**T2.3 Outros**
+
+Lembra-se deste item **OUTROS** mencionado anteriormente na seção **T1** de análise?
+Possivelmente, este ponto pode ter resolução no que comentamos ao longo deste documento, porém, existem casos, em que apenas isto não irá resolver o problema.
+
+Um **caso típico** onde existe problema de processamento e demora ocorre quando existe uma sequencia de processamento a ser feito e uma tarefa acaba dependendo de outra, logo, é necessário aguardar a execução da anterior para prosseguir.
+
+Mas e se as tarefas não necessitarem desta espera?????
+
+Podemos considerar neste caso que existem alternativas para processar as atividades em paralelo, tornando o tempo de resposta bem mais rápido.
+Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também como fila de mensagens.
+
+    Considere os pontos em que sua aplicação possa contar com este recurso pois 
+    nestes casos, é possível liberar sua aplicação de continuar o processamento
+    (muitas vezes liberando o usuário para continuar suas atividades) e 
+    enviando a resposta de forma assíncrona após a realização de todas as atividades
+    de processamento
+    
+![Fig 7](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig7.jpg?raw=true)
+
+----
+# T3 - Conclusão
+
+Escrever uma aplicação pode ser bastante complexo, muitas vezes o fazemos com um cenário em mente porém este muda drasticamente trazendo um outro mais complexo, com mais dados a serem processados, trazendo muitas vezes problemas de tempo de resposta ou até o colapso geral da aplicação.
+
+O cenário e as soluções apresentadas aqui representam uma pequena parte dos problemas que acontecem em geral, porém a partir daqui podemos avaliar vários outros casos de uso e complementar o que for necessário para uma solução efetiva de implementação com performance e custo baixo.
+
+Se você leu este documento até aqui, por favor, contribua com sugestões de novos casos de uso ou soluções.
+
+Obrigado!
