@@ -165,7 +165,6 @@ https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-g
 **Publish/Subscriber (Queue/Filas)**
 
 https://www.techsupper.com/2017/07/integration-to-publish-messages-to.html
-https://www.techsupper.com/2017/07/integration-to-subscribe-to-oracle_72.html
 https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part1
 https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part2
 
