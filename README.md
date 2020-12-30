@@ -66,7 +66,7 @@ Leve em consideração os seguintes pontos para avaliar quando usar ou não **Lo
     
     Está considerando Loop dentro de Loop? Lembre-se que o tempo é multiplicado pelo número de passos dentro deste Loop. Logo, use Loops com inteligência
     
-**Loops** são extremamente úteis, portanto não descarte de usá-los, porém leve em consideração o tempo de execução e faça testes mais próximos da realidade para avaliar considerar ou não seu uso.
+**Loops** são extremamente úteis, portanto não descarte de usá-los, porém leve em consideração o tempo **TOTAL** de execução e faça testes mais próximos da realidade para avaliar considerar ou não seu uso.
 
     Você pode considerar usar Loops dentro do OIC quando estiver pensando em execuções em BATCH (temporizadas)
     
@@ -161,10 +161,10 @@ https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-g
 
 **Publish/Subscriber (Queue/Filas)**
 
-https://www.techsupper.com/2017/07/integration-to-publish-messages-to.html 
-https://www.techsupper.com/2017/07/integration-to-subscribe-to-oracle_72.html 
-https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part1 
-https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part2 
+https://www.techsupper.com/2017/07/integration-to-publish-messages-to.html
+https://www.techsupper.com/2017/07/integration-to-subscribe-to-oracle_72.html
+https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part1
+https://blogs.oracle.com/integration/integration-patterns-publishsubscribe-part2
 
 **Agendamentos no OIC**
 
