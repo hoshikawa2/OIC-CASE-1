@@ -41,7 +41,7 @@ Não iremos detalhar esta etapa porém trataremos as alternativas cabíveis adia
 
 Caso clássico de consulta a um banco de dados para que em seguida, possamos utilizar as linhas obtidas para processamento.
 A solução clássica em banco de dados também vale aqui. Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
-Cria um índice de banco de dados pode ajudar na performance da execução desta consulta.
+Criar um índice de banco de dados pode ajudar na performance da execução desta consulta.
 
 Além disto, talvez valha a pena a criação de uma stored procedure para que a consulta esteja compilada no banco de dados e possa ser executada de forma imediata. Isto vai ajudar bastante na performance.
 
@@ -97,7 +97,12 @@ Demandas que necessitam de processamento e resposta próximo ao **tempo-real** s
    para que no início do dia, tudo possa ser processado de forma mais leve
    
 Em nosso caso de uso, o processo original implica em um botão que dispara o processamento dos boletos em atraso. 
-Levando em consideração as análises anteriores em **T1**, uma boa abordagem seria deixar o processamento mais leve fazendo uma preparação prévia das informações durante a madrugada.
+Levando em consideração as análises anteriores em **T1**, uma boa abordagem seria deixar o processamento mais leve fazendo uma preparação prévia das informações durante a madrugada. 
+
+    No caso da query inicial para buscar os boletos em atraso dos últimos 5 anos e suas parcelas, 
+    é realmente necessário que esta consulta seja realizada no momento em que o usuário pressiona o botão? 
+    Ou podemos preparar estes dados na madrugada anterior? 
+    As informações mudam constantemente para impedir que a preparação seja feita momentos antes?
 
 O que isto quer dizer?
 
