@@ -66,7 +66,7 @@ Leve em consideração os seguintes pontos para avaliar quando usar ou não **Lo
     
     Está considerando Loop dentro de Loop? Lembre-se que o tempo é multiplicado pelo número de passos dentro deste Loop. Logo, use Loops com inteligência
     
-**Loops** são extremamente úteis, portanto não descarte de usá-los, porém leve em consideração o tempo **TOTAL** de execução e faça testes mais próximos da realidade para avaliar considerar ou não seu uso.
+**Loops** são extremamente úteis, portanto não descarte usá-los, porém leve em consideração o tempo **TOTAL** de execução e faça testes mais próximos da realidade para avaliar considerar ou não seu uso.
 
     Você pode considerar usar Loops dentro do OIC quando estiver pensando em execuções em BATCH (temporizadas)
     
