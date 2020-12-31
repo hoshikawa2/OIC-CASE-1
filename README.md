@@ -41,9 +41,11 @@ Não iremos detalhar esta etapa porém trataremos as alternativas cabíveis adia
 **T2.1 Consultas a bancos de dados**
 
 Caso clássico de consulta a um banco de dados para que em seguida, possamos utilizar as linhas obtidas para processamento.
-A solução clássica em banco de dados também vale aqui. Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
+Existem vários artigos para otimização de banco de dados e eles também valem aqui. 
 
-Algumas observações clássicas para otimização de queries são:
+Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
+
+Algumas observações típicas para otimização de queries são:
 
 
     Criar um índice de banco de dados pode ajudar na performance da execução desta consulta.
