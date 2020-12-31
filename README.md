@@ -5,7 +5,8 @@ O Objetivo deste documento é demonstrar um caso de uso típico de implementaç�
 -----
 # T1 - Cenário Atual (As-Is)
 
-Na Figura abaixo, temos um caso de processamento de boletos em atraso, no qual existe um botão que dispara o processamento.
+Na Figura abaixo, temos um caso de processamento de boletos em atraso, no qual existe um botão que dispara o processamento. O botão e parte deste processamento está fora do OIC, porém, nada impede que o caso de uso poderia ter ou não esta parte dentro do OIC. 
+
 Vamos abstrair os detalhes deste processamento, imaginando que, um usuário clica no botão e espera que os boletos em atraso dos últimos 5 anos possam ser renegociados, impressos ou algum tipo de processamento adicional seja realizado neste momento. 
 Qualquer processamento adicional pode estar presente ou não neste caso de uso. O importante aqui é analisar a situação dos objetivos de forma bem abstrata. Logo, este caso de uso pode ser útil para várias outras situações.
 
