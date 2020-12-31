@@ -49,7 +49,7 @@ Além disto, talvez valha a pena a criação de uma stored procedure para que a 
 A procedure também pode ser considerada para casos em que se possa tratar os dados para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é possível resolver numa query só estes problemas. 
 
 
-**T2.2 Substituir Consulta Única por Lotes**
+**T2.2 Substituir Consulta ou Ação Única por Lotes**
 
 Dentro do OIC (na figura abaixo, grifado em azul) são executadas inúmeras chamadas (1.000x) para a API do **ERP SaaS** ocasionando o efeito analisado em **T1.2**.
 
