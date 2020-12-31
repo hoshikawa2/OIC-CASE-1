@@ -161,6 +161,11 @@ https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-g
 
 ![Fig 9](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig9.png?raw=true)
 
+**Oracle ERP Cloud - Multiplos Registros**
+
+https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/Batch_Actions.html
+
+![Fig 10](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig10.png?raw=true)
 
 **Publish/Subscriber (Queue/Filas)**
 
