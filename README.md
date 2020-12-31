@@ -49,7 +49,8 @@ Algumas observações clássicas para otimização de queries são:
     Criar um índice de banco de dados pode ajudar na performance da execução desta consulta.
     Não utilizar muitos JOINS na query, pois isto envolve muito processamento de disco e memória.
     VIEWS são mais rápidas que uma execução de SELECT pois são compiladas no banco de dados.
-    
+    EVITE a todo custo expressões com LIKE/% ou IN. Índices não vão ajudar nestes casos.    
+
     Além disto, talvez valha a pena a criação de uma stored procedure para que a 
     consulta esteja compilada no banco de dados e possa ser executada de forma imediata.
     Isto vai ajudar bastante na performance.
