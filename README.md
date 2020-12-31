@@ -50,9 +50,13 @@ Algumas observações clássicas para otimização de queries são:
     Não utilizar muitos JOINS na query, pois isto envolve muito processamento de disco e memória.
     VIEWS são mais rápidas que uma execução de SELECT pois são compiladas no banco de dados.
     
-    Além disto, talvez valha a pena a criação de uma stored procedure para que a consulta esteja compilada no banco de dados e possa ser executada de forma imediata. Isto vai ajudar bastante na performance.
+    Além disto, talvez valha a pena a criação de uma stored procedure para que a 
+    consulta esteja compilada no banco de dados e possa ser executada de forma imediata.
+    Isto vai ajudar bastante na performance.
 
-    A procedure também pode ser considerada para casos em que se possa tratar os dados para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é possível resolver numa query só estes problemas. 
+    A procedure também pode ser considerada para casos em que se possa tratar os dados 
+    para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é 
+    possível resolver numa query só estes problemas. 
 
 
 **T2.2 Substituir Consulta ou Ação Única por Lotes**
