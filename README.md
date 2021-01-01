@@ -169,13 +169,13 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 
 # T3 - Materiais de Ajuda
 
-**Oracle ERP Cloud - APIs que permitem especificar filtros e colunas**
+**Oracle ERP Cloud - APIs de Consultas em Lote com filtros e colunas**
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-get.html
 
 ![Fig 9](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig9.png?raw=true)
 
-**Oracle ERP Cloud - Multiplos Registros**
+**Oracle ERP Cloud - Ações em Lote**
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/Batch_Actions.html
 
