@@ -169,6 +169,10 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 
 # T3 - Materiais de Ajuda
 
+**Armadilhas do padrão de integração comum e práticas recomendadas de design**
+
+https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/common-integration-pattern-pitfalls-and-design-best-practices.html#GUID-09CEC808-3110-4EE4-9478-666A17451458
+
 **Oracle ERP Cloud - APIs de Consultas em Lote com filtros e colunas**
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-get.html
