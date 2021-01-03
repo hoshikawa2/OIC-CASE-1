@@ -145,7 +145,15 @@ Com base nisto, poderíamos propor processamentos agendados para preparação de
 
 ![Fig 6](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig6.jpg?raw=true)
 
-**T2.4 Outros**
+**T2.4 Load-Balancer**
+
+Na pior das hipóteses, se de maneira alguma, não for possível uma abordagem de lote e a performance seja algo realmente crítico, podemos adotar uma implementação com chamada atômica através de vários OICs com Load-Balancer.
+Uma ressalva é de que o OIC é dependente dos endpoints que ele chama, portanto, não vai adiantar nada a clusterização de OICs se os endpoints da implementação não estiverem no mesmo formato. Os endpoints acabarão virando o "gargalo" da integração.
+
+![Fig 11](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig11.jpg?raw=true)
+
+
+**T2.5 Outros**
 
 Lembra-se deste item **OUTROS** mencionado anteriormente na seção **T1** de análise?
 Possivelmente, este ponto pode ter resolução no que comentamos ao longo deste documento, porém, existem casos, em que apenas isto não irá resolver o problema.
