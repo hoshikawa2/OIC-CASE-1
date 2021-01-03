@@ -5,7 +5,8 @@ O Objetivo deste documento é demonstrar um caso de uso típico de implementaç�
 -----
 # T1 - Cenário Atual (As-Is)
 
-Na Figura abaixo, temos um caso de processamento de boletos em atraso, no qual existe um botão que dispara o processamento.
+Na Figura abaixo, temos um caso de processamento de boletos em atraso, no qual existe um botão que dispara o processamento. O botão e parte deste processamento está fora do OIC, porém, nada impede que o caso de uso poderia ter ou não esta parte dentro do OIC. 
+
 Vamos abstrair os detalhes deste processamento, imaginando que, um usuário clica no botão e espera que os boletos em atraso dos últimos 5 anos possam ser renegociados, impressos ou algum tipo de processamento adicional seja realizado neste momento. 
 Qualquer processamento adicional pode estar presente ou não neste caso de uso. O importante aqui é analisar a situação dos objetivos de forma bem abstrata. Logo, este caso de uso pode ser útil para várias outras situações.
 
@@ -40,15 +41,28 @@ Não iremos detalhar esta etapa porém trataremos as alternativas cabíveis adia
 **T2.1 Consultas a bancos de dados**
 
 Caso clássico de consulta a um banco de dados para que em seguida, possamos utilizar as linhas obtidas para processamento.
-A solução clássica em banco de dados também vale aqui. Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
-Criar um índice de banco de dados pode ajudar na performance da execução desta consulta.
+Existem vários artigos para otimização de banco de dados e eles também valem aqui. 
 
-Além disto, talvez valha a pena a criação de uma stored procedure para que a consulta esteja compilada no banco de dados e possa ser executada de forma imediata. Isto vai ajudar bastante na performance.
+Procurar executar queries enxutas, que tragam apenas as linhas e as colunas que serão úteis para o processamento. Qualquer coisa fora deste contexto, se torna inútil, custoso e lento.
 
-A procedure também pode ser considerada para casos em que se possa tratar os dados para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é possível resolver numa query só estes problemas. 
+Algumas observações típicas para otimização de queries são:
 
 
-**T2.2 Substituir Consulta Única por Lotes**
+    Criar um índice de banco de dados pode ajudar na performance da execução desta consulta.
+    Não utilizar muitos JOINS na query, pois isto envolve muito processamento de disco e memória.
+    VIEWS são mais rápidas que uma execução de SELECT pois são compiladas no banco de dados.
+    EVITE a todo custo expressões com LIKE/% ou IN. Índices não vão ajudar nestes casos.    
+
+    Além disto, talvez valha a pena a criação de uma stored procedure para que a 
+    consulta esteja compilada no banco de dados e possa ser executada de forma imediata.
+    Isto vai ajudar bastante na performance.
+
+    A procedure também pode ser considerada para casos em que se possa tratar os dados 
+    para otimizar mais ainda o processamento do caso de uso. Muitas vezes, não é 
+    possível resolver numa query só estes problemas. 
+
+
+**T2.2 Substituir Consulta ou Ação Única por Lotes**
 
 Dentro do OIC (na figura abaixo, grifado em azul) são executadas inúmeras chamadas (1.000x) para a API do **ERP SaaS** ocasionando o efeito analisado em **T1.2**.
 
@@ -155,15 +169,21 @@ Para isto, o OIC conta com o uso de **PUBLISH/SUBSCRIBER**, conhecido também co
 
 # T3 - Materiais de Ajuda
 
-**Oracle ERP Cloud - APIs que permitem especificar filtros e colunas**
+**Armadilhas do padrão de integração comum e práticas recomendadas de design**
+
+https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/common-integration-pattern-pitfalls-and-design-best-practices.html#GUID-09CEC808-3110-4EE4-9478-666A17451458
+
+**Oracle ERP Cloud - APIs de Consultas em Lote com filtros e colunas**
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/op-payablespayments-get.html
 
 ![Fig 9](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig9.png?raw=true)
 
-**Oracle ERP Cloud - Multiplos Registros**
+**Oracle ERP Cloud - Ações em Lote**
 
 https://docs.oracle.com/en/cloud/saas/financials/20b/farfa/Batch_Actions.html
+
+https://docs.oracle.com/en/cloud/saas/procurement/20d/fapra/Batch_Actions.html
 
 ![Fig 10](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig10.png?raw=true)
 
