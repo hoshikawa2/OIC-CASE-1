@@ -14,7 +14,7 @@ Após o clique do botão, é executada uma consulta em banco de dados (Query) no
 
 ![Fig 1](https://github.com/hoshikawa2/OIC-CASE-1/blob/master/Images/Fig1.jpg?raw=true)
 
-**T1.1 Análise da Query**
+**T1.1 Análise da Query em Banco de Dados**
 
 Trata-se de uma consulta extremamente demorada, pois envolve as tabelas de Boletos e suas respectivas parcelas dos últimos 5 anos. Possivelmente, ainda existem complicadores como dados que não estão tratados para uso imediato do processamento em questão e que podem demandar algum tipo de tratamento durante a execução deste caso de uso.
 
