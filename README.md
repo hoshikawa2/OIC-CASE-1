@@ -1,6 +1,11 @@
-# OIC - Caso de Uso 1 - Processamento Baseado em Consulta a Banco de Dados
+# OIC - Caso de Uso 1 - Performance com o Oracle ERP Cloud
 
 O Objetivo deste documento é demonstrar um caso de uso típico de implementação em OIC não-performática e quais são as alternativas possíveis para torná-la mais produtiva.
+
+Este caso de uso vai lhe ajudar caso esteja pensando em:
+* Uso de Banco de Dados para consultas e processamento em Loops
+* Chamadas à API REST/SOAP da aplicação Oracle (Oracle ERP Cloud entre outras)
+* Criar uma rotina complexa e com volume grande de dados
 
 -----
 # T1 - Cenário Atual (As-Is)
