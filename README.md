@@ -219,6 +219,9 @@ https://docs.oracle.com/en/cloud/paas/integration-cloud/integrations-user/creati
 https://docs.oracle.com/en/cloud/paas/integration-cloud/database-adapter/using-oracle-database-adapter-oracle-integration.pdf
 https://www.techsupper.com/2017/11/bind-query-parameter-in-database.html
 
+**Melhorar o desempenho dos fluxos de integração Oracle que usam chamadas REST**
+
+https://www.ateam-oracle.com/improving-the-performance-of-oracle-integration-flows-that-use-rest-calls
 
 ----
 # T4 - Conclusão
