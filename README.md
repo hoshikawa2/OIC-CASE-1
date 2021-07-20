@@ -1,4 +1,4 @@
-# OIC-CASE-1
+# OIC - Caso de Uso 1 - Processamento Baseado em Consulta a Banco de Dados
 
 O Objetivo deste documento é demonstrar um caso de uso típico de implementação em OIC não-performática e quais são as alternativas possíveis para torná-la mais produtiva.
 
@@ -53,7 +53,7 @@ Algumas observações típicas para otimização de queries são:
     VIEWS são mais rápidas que uma execução de SELECT pois são compiladas no banco de dados.
     EVITE a todo custo expressões com LIKE/% ou IN. Índices não vão ajudar nestes casos.    
 
-    Além disto, talvez valha a pena a criação de uma stored procedure para que a 
+    Além disto, talvez valha a pena a criação de uma View ou stored procedure para que a 
     consulta esteja compilada no banco de dados e possa ser executada de forma imediata.
     Isto vai ajudar bastante na performance.
 
